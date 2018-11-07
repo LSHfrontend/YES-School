@@ -1,2 +1,2 @@
 # YES-School
-Тестовый макет "YES School"
+Вёрстка тестового макета "YES School"
