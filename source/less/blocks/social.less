@@ -1,0 +1,37 @@
+.social__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .list-style;
+
+  padding: 0 10px;
+}
+
+.social__link {
+  display: inline-block;
+
+  &:hover .social__icon,
+  &:focus .social__icon {
+    color: @red;
+  }
+
+  &:active .social__icon {
+    opacity: 0.3;
+  }
+}
+
+.social__icon {
+  vertical-align: top;
+
+  color: @grey;
+}
+
+@media (min-width: @tablet-width) {
+  .social__list {
+    padding: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {}

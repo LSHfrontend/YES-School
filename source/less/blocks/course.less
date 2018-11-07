@@ -1,0 +1,171 @@
+.course {
+  position: relative;
+
+  margin-bottom: 83px;
+  padding-top: 318px;
+
+  text-align: center;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    z-index: -1;
+
+    width: 258px;
+    height: 326px;
+    margin-left: -131px;
+
+    background-image: url("../img/bus-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 258px 326px;
+  }
+}
+
+.course__heading {
+  margin: 0;
+  margin-bottom: 35px;
+
+  .heading;
+}
+
+.course__heading b {
+  position: relative;
+  display: block;
+
+  margin-bottom: 2px;
+
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+}
+
+.course__text {
+  margin: 0;
+  margin-bottom: 12px;
+  padding: 0 20px;
+
+  line-height: 1.8rem;
+  color: @dark;
+}
+
+@media (min-width: @tablet-width) {
+  .course {
+    margin-bottom: 69px;
+    padding-top: 110px;
+
+    text-align: left;
+
+    &::before {
+      top: -44px;
+      left: -1px;
+
+      width: 100%;
+      height: 488px;
+      margin-left: 0;
+
+      background-image: url("../img/bus-tablet.jpg");
+      background-size: 1170px 488px;
+    }
+  }
+
+  .course__wrapper {
+    box-sizing: border-box;
+
+    width: 720px;
+    margin: 0 auto;
+    padding-left: 313px;
+  }
+
+  .course__heading {
+    .heading--big;
+
+    margin-bottom: 50px;
+
+    &::after {
+      bottom: -31px;
+    }
+  }
+
+  .course__heading b {
+    margin-bottom: 10px;
+
+    font-size: 2.4rem;
+  }
+
+  .course__text {
+    margin-bottom: 78px;
+    padding: 0;
+  }
+
+  .course__sign-up {
+    margin-left: 4px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .course {
+    margin-bottom: 198px;
+    padding-top: 230px;
+
+    &::before {
+      top: -70px;
+
+      height: 794px;
+
+      background-image: url("../img/bus-desktop.jpg");
+      background-size: 1920px 794px;
+    }
+  }
+
+  .course__wrapper {
+    width: 1140px;
+    padding-left: 621px;
+  }
+
+  .course__heading {
+    .heading--huge;
+
+    margin-bottom: 52px;
+
+    &::after {
+      bottom: -27px;
+    }
+  }
+
+  .course__heading b {
+    margin-bottom: 7px;
+
+    font-size: 3.4rem;
+  }
+
+  .course__text {
+    margin-bottom: 92px;
+
+    line-height: 2.4rem;
+  }
+
+  .course__sign-up {
+    margin-left: 0;
+  }
+}
+
+@media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .course::before {
+    background-image: url("../img/bus@2x-mobile.jpg");
+  }
+
+  @media (min-width: @tablet-width) {
+    .course::before {
+      background-image: url("../img/bus@2x-tablet.jpg");
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .course::before {
+      background-image: url("../img/bus@2x-desktop.jpg");
+    }
+  }
+}

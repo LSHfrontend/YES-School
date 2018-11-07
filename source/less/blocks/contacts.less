@@ -1,0 +1,41 @@
+.contacts__tel {
+  display: block;
+
+  margin-bottom: 5px;
+
+  line-height: 2.4rem;
+
+  &:hover,
+  &:focus {
+    color: @red;
+  }
+}
+
+.contacts__call-request {
+  color: @red;
+
+  border-bottom: 2px solid @light-red;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: @red;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .contacts__tel {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .contacts__tel {
+    display: inline-block;
+  }
+
+  .contacts__call-request {
+    margin-left: 25px;
+
+    line-height: 2.4rem;
+  }
+}

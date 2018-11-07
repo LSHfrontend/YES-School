@@ -1,0 +1,279 @@
+.price-include {
+  position: relative;
+
+  margin-bottom: 42px;
+  padding-top: 398px;
+
+  text-align: center;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -25px;
+    left: -2px;
+    z-index: -1;
+
+    width: 290px;
+    height: 388px;
+
+    background-image: url("../img/bigben-mobile.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 290px 388px;
+  }
+}
+
+.price-include__heading {
+  margin: 0;
+  margin-bottom: 32px;
+
+  .heading;
+
+  &::after {
+    bottom: -18px;
+
+    margin-left: -35px;
+  }
+}
+
+.price-include__cost {
+  display: block;
+  margin-bottom: 11px;
+
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 2.8rem;
+  color: @red;
+}
+
+.price-include__description {
+  box-sizing: border-box;
+
+  width: 290px;
+  margin: 0 auto 31px;
+
+  line-height: 1.8rem;
+  color: @dark;
+}
+
+.price-include__list {
+  .list-style;
+
+  width: 290px;
+  margin: 0 auto;
+}
+
+.price-include__item {
+  margin-bottom: 23px;
+
+  color: @dark;
+}
+
+.price-include__title {
+  margin: 0;
+  margin-bottom: 12px;
+
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.price-include__text {
+  margin: 0;
+
+  line-height: 1.8rem;
+}
+
+@media (min-width: @tablet-width) {
+  .price-include {
+    box-sizing: border-box;
+
+    width: 720px;
+    margin: 0 auto 160px;
+    padding-top: 42px;
+    padding-left: 125px;
+
+    text-align: left;
+
+    &::before {
+      top: 10px;
+      left: -226px;
+
+      width: 316px;
+      height: 877px;
+
+      background-image: url("../img/bigben-tablet.jpg");
+      background-size: 316px 877px;
+    }
+  }
+
+  .price-include__heading {
+    .heading--big;
+
+    margin-bottom: 55px;
+
+    &::before {
+      content: "?";
+
+      position: absolute;
+      top: -96px;
+      right: -51px;
+      z-index: -1;
+
+      font-size: 20rem;
+      font-weight: 800;
+      color: @light-white;
+    }
+
+    &::after {
+      bottom: -27px;
+
+      margin-left: 1px;
+    }
+
+    & br {
+      display: none;
+    }
+  }
+
+  .price-include__cost {
+    margin-bottom: 32px;
+
+    .heading--big;
+  }
+
+  .price-include__description {
+    width: auto;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+
+    line-height: 2.4rem;
+  }
+
+  .price-include__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: auto;
+    margin: 0;
+  }
+
+  .price-include__item {
+    width: 283px;
+    margin-bottom: 20px;
+
+    &:nth-child(-4n + 5) {
+      order: 1;
+    }
+
+    &:nth-child(-4n + 6) {
+      order: 2;
+    }
+
+    &:nth-child(-4n + 7) {
+      order: 3;
+
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(-4n + 8) {
+      order: 4;
+    }
+  }
+
+  .price-include__title {
+    margin-bottom: 14px;
+
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  .price-include__text {
+    line-height: 2.4rem;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .price-include {
+    width: 1140px;
+    margin-bottom: 132px;
+    padding-top: 140px;
+    padding-left: 390px;
+
+    &::before {
+      top: 6px;
+      left: -409px;
+
+      width: 749px;
+      height: 1078px;
+
+      background-image: url("../img/bigben-desktop.jpg");
+      background-size: 749px 1078px;
+    }
+  }
+
+  .price-include__heading {
+    margin-bottom: 94px;
+
+    .heading--huge;
+
+    &::before {
+      top: -127px;
+      right: -74px;
+
+      font-size: 30rem;
+    }
+
+    &::after {
+      bottom: -40px;
+    }
+  }
+
+  .price-include__cost {
+    margin-bottom: 24px;
+
+    .heading--huge;
+  }
+
+  .price-include__description {
+    width: 653px;
+    margin-bottom: 35px;
+
+    line-height: 2.8rem;
+  }
+
+  .price-include__item {
+    width: 360px;
+    margin-bottom: 30px;
+  }
+
+  .price-include__title {
+    margin-bottom: 10px;
+
+    font-size: 1.8rem;
+  }
+
+  .price-include__text {
+    line-height: 2.8rem;
+  }
+}
+
+@media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .price-include::before {
+    background-image: url("../img/bigben@2x-mobile.jpg");
+  }
+
+  @media (min-width: @tablet-width) {
+    .price-include::before {
+      background-image: url("../img/bigben@2x-tablet.jpg");
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .price-include::before {
+      background-image: url("../img/bigben@2x-desktop.jpg");
+    }
+  }
+}

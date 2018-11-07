@@ -1,0 +1,159 @@
+.trial-session {
+  padding: 215px 0 184px;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.trial-session__wrapper {
+  position: relative;
+
+  width: 320px;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -213px;
+    left: 0;
+    z-index: -1;
+
+    width: 429px;
+    height: 261px;
+
+    background-image: url("../img/plane-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 429px 261px;
+  }
+
+  &::after {
+    .circle;
+
+    left: 41px;
+    bottom: -60px;
+
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.trial-session__heading {
+  margin: 0;
+  margin-bottom: 40px;
+
+  .heading;
+}
+
+.trial-session_text {
+  width: 290px;
+  margin: 0 auto 19px;
+
+  font-weight: 300;
+  line-height: 1.8rem;
+  color: @dark;
+}
+
+@media (min-width: @tablet-width) {
+  .trial-session {
+    padding: 167px 0 137px;
+
+    text-align: left;
+  }
+
+  .trial-session__wrapper {
+    box-sizing: border-box;
+
+    width: 720px;
+    padding-left: 375px;
+
+    &::before {
+      top: -166px;
+      left: -226px;
+
+      width: 1118px;
+      height: 509px;
+
+      background-image: url("../img/plane-tablet.jpg");
+      background-size: 1118px 509px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .trial-session__heading {
+    margin-bottom: 52px;
+
+    .heading--big;
+
+    &::after {
+      bottom: -28px;
+    }
+  }
+
+  .trial-session_text {
+    width: auto;
+    margin: 0;
+    margin-bottom: 32px;
+
+    line-height: 2.4rem;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .trial-session {
+    padding: 265px 0 185px;
+  }
+
+  .trial-session__wrapper {
+    width: 1140px;
+    padding-left: 622px;
+
+    &::before {
+      top: -265px;
+      left: -391px;
+
+      width: 1629px;
+      height: 813px;
+
+      background-image: url("../img/plane-desktop.jpg");
+      background-size: 1629px 813px;
+    }
+  }
+
+  .trial-session__heading {
+    margin-bottom: 52px;
+
+    .heading--huge;
+  }
+
+  .trial-session_text {
+    margin-bottom: 94px;
+    padding-right: 82px;
+
+    line-height: 2.4rem;
+  }
+}
+
+@media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .trial-session__wrapper::before {
+    background-image: url("../img/plane@2x-mobile.jpg");
+  }
+
+  @media (min-width: @tablet-width) {
+    .trial-session__wrapper::before {
+      background-image: url("../img/plane@2x-tablet.jpg");
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .trial-session__wrapper::before {
+      background-image: url("../img/plane@2x-desktop.jpg");
+
+    }
+  }
+}

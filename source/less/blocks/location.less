@@ -1,0 +1,22 @@
+.location {
+  line-height: 2.4rem;
+  color: @dark;
+}
+
+.location__school {
+  display: block;
+}
+
+.location__address {
+  font-weight: 300;
+}
+
+@media (min-width: @desktop-width) {
+  .location__school {
+    display: inline-block;
+  }
+
+  .location__address {
+    text-align: right;
+  }
+}
