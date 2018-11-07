@@ -59,6 +59,14 @@
   display: none;
 
   line-height: 2.4rem;
+  color: @red;
+
+  border-bottom: 2px solid @light-red;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: @red;
+  }
 }
 
 .reviews__radio {
@@ -114,15 +122,15 @@
     opacity: 1;
 
     transition: opacity 0.65s linear 0s, right 0.35s ease-in-out 0s;
+
+    & .reviews__link {
+      display: inline;
+    }
   }
 
-  .reviews__radio[id|="slider"]:checked ~ .reviews__item > .reviews__link {
-    display: inline;
-  }
-
-  .reviews__radio[id="slider-1"]:checked ~ .reviews__control > .reviews__toggle[for="slider-1"],
-  .reviews__radio[id="slider-2"]:checked ~ .reviews__control > .reviews__toggle[for="slider-2"],
-  .reviews__radio[id="slider-3"]:checked ~ .reviews__control > .reviews__toggle[for="slider-3"] {
+  .reviews__radio[id="slider-1"]:checked ~ .reviews__control .reviews__toggle[for="slider-1"],
+  .reviews__radio[id="slider-2"]:checked ~ .reviews__control .reviews__toggle[for="slider-2"],
+  .reviews__radio[id="slider-3"]:checked ~ .reviews__control .reviews__toggle[for="slider-3"] {
     background-color: @red;
     box-shadow: 0 4px 10px 0 rgba(245, 17, 44, 0.58);
   }
@@ -156,6 +164,10 @@
 
     &--active {
       display: block;
+
+      & .reviews__link {
+        display: inline;
+      }
     }
   }
 
