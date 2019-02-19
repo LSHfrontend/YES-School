@@ -43,8 +43,8 @@ gulp.task("normalize", function () {
 gulp.task("image-optim", function () {
   return gulp.src("source/img/*.{png,jpg,svg}")
   .pipe(imagemin([
-    imageminPngquant(),
-    imageminMozjpeg({progressive: true}),
+    imageminPngquant({quality: 75}),
+    imageminMozjpeg({quality: 75, progressive: true}),
     imagemin.svgo()
   ]))
   .pipe(gulp.dest("source/img"));
@@ -52,7 +52,7 @@ gulp.task("image-optim", function () {
 
 gulp.task("webp", function () {
   return gulp.src("source/img/*.{png,jpg}")
-  .pipe(webp({quality: 90}))
+  .pipe(webp({quality: 75}))
   .pipe(gulp.dest("source/img"));
 });
 
@@ -99,7 +99,7 @@ gulp.task("copy", function () {
   "source/fonts/**/*.{woff,woff2}",
   "!source/img/originals",
   "!source/img/originals/**",
-  "source/img/**.{jpg,png,svg,webp}"
+  "source/img/**.{jpg,png,svg,webp}",
   ], {
     base: "source"
   })

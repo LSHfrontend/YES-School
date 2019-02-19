@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Школа YES</title>
+    <meta name="description" content="Вёрстка тестового макета 'YES School'">
     <link rel="preload" href="fonts/GilroyLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/GilroyExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Школа YES</title>
+    <script src="js/init.js"></script>
+    <style>
+      .to-main-page{position:fixed;top:80%;left:-35px;z-index:9999;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:left .3s ease-out 0s;transition:left .3s ease-out 0s;background-color:#181818;border-radius:15px;opacity:.85}.to-main-page__logo{display:block;width:50px;height:50px;padding:10px;outline:0;border-radius:15px}.to-main-page__logo:focus .to-main-page__logo-group--border,.to-main-page__logo:hover .to-main-page__logo-group--border{stroke-width:2}.to-main-page__logo:focus .to-main-page__logo-group--inner,.to-main-page__logo:hover .to-main-page__logo-group--inner{fill:#31c12a}.to-main-page__logo-image{vertical-align:top}.to-main-page__logo-group{-webkit-transition:fill .3s ease-out 0s,stroke-width 1s ease-out 0s;transition:fill .3s ease-out 0s,stroke-width 1s ease-out 0s}.to-main-page__logo-group--border{stroke:#31c12a;stroke-width:1.5}.to-main-page__logo-group--inner{fill:#fff}@media (min-width:768px){.to-main-page{left:-60px}.to-main-page__logo,.to-main-page__logo-image{width:100px;height:100px}@-webkit-keyframes logoBorder{to{opacity:.2}}@keyframes logoBorder{to{opacity:.2}}@-webkit-keyframes logoInner{to{stroke-dashoffset:0}}@keyframes logoInner{to{stroke-dashoffset:0}}.to-main-page__logo:focus .to-main-page__logo-group--border,.to-main-page__logo:hover .to-main-page__logo-group--border{stroke-width:3;stroke-dasharray:50;stroke-dashoffset:300;-webkit-animation:logoBorder 2s ease-in 0s infinite alternate,logoInner 2s linear 0s infinite;animation:logoBorder 2s ease-in 0s infinite alternate,logoInner 2s linear 0s infinite}.to-main-page__logo:focus .to-main-page__logo-group--inner,.to-main-page__logo:hover .to-main-page__logo-group--inner{fill:none;stroke:#31c12a;stroke-width:1.5;stroke-dasharray:220;stroke-dashoffset:220;-webkit-animation:logoInner 2s ease-in-out 0s infinite alternate;animation:logoInner 2s ease-in-out 0s infinite alternate}.MSBrowser .to-main-page__logo:focus .to-main-page__logo-group,.MSBrowser .to-main-page__logo:hover .to-main-page__logo-group{fill:#31c12a;-webkit-animation:none;animation:none}.MSBrowser .to-main-page__logo:focus .to-main-page__logo-group--border,.MSBrowser .to-main-page__logo:hover .to-main-page__logo-group--border{stroke-dasharray:0;stroke-dashoffset:0}}@media (min-width:1170px){.to-main-page:hover{left:0}}
+    </style>
   </head>
 
   <body>
     <header class="page-header">
-      <a class="page-header__logo" href="/">
-        <picture class="page-header__picture">
-          <source media="(min-width: 1170px)" srcset="img/yes-desktop.jpg 1x, img/yes@2x-desktop.jpg 2x">
-          <img class="page-header__image shortRes" src="img/yes-mobile.jpg" srcset="img/yes@2x-mobile.jpg 2x" alt="Логотип сайта 'Yes'">
-        </picture>
+      <a class="page-header__logo" href="/yesSchool" aria-label="Логотип сайта 'Школа YES'">
+        <svg class="page-header__image" width="63" height="23" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
       </a>
 
       <p class="page-header__contacts">
         <b class="page-header__address">г. Москва ул. Северная, 35</b>
-        <a class="page-header__tel" href="tel:+7495465467">+7 (945) 46-54-67</a>
-        <a class="page-header__call-request" href="appointment.html">Заказать звонок</a>
+        <a class="page-header__tel" href="tel:+7945465467">+7 (945) 46-54-67</a>
+        <a class="page-header__call-request" href="appointment.html" data-modal>Заказать звонок</a>
       </p>
     </header>
 
@@ -34,7 +38,7 @@
         <div class="course__wrapper">
           <h2 class="course__heading heading--underline" id="course__heading"><b>Ускоренный</b>2-месячный курс<br>английского языка</h2>
           <p class="course__text">Освойте английский для путешествий<br>и научитесь объясняться в любой ситуации</p>
-          <a class="course__sign-up button" href="appointment.html">Записаться на пробное занятие</a>
+          <a class="course__sign-up button" href="appointment.html" data-modal>Записаться на пробное занятие</a>
         </div>
       </section>
 
@@ -139,7 +143,10 @@
       </section>
 
       <section class="price-include" aria-labelledby="price-include__heading">
-        <h2 class="price-include__heading heading--underline" id="price-include__heading">Что входит <br>в стоимость</h2>
+        <h2 class="price-include__heading heading--underline" id="price-include__heading">
+          <span>Что входит</span>
+          <span>в стоимость</span>
+        </h2>
         <b class="price-include__cost">21 000 рублей</b>
         <p class="price-include__description">Вы пройдете 2-месячную программу по 2 занятия в неделю, в конце каждой из которых сможете самостоятельно построить диалог</p>
 
@@ -234,9 +241,9 @@
         <h2 class="reviews__heading heading--underline" id="reviews__heading">Отзывы студентов</h2>
 
         <div class="reviews__list">
-          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slider-1" checked>
-          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slider-2">
-          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slider-3">
+          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slide-1" checked>
+          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slide-2">
+          <input class="reviews__radio visually-hidden" type="radio" name="toggle" id="slide-3">
 
           <blockquote class="reviews__item reviews__item--active">
             <figure>
@@ -278,9 +285,9 @@
           </blockquote>
 
           <div class="reviews__control">
-            <label for="slider-1" class="reviews__toggle" title="Переключить на 1-й отзыв"></label>
-            <label for="slider-2" class="reviews__toggle" title="Переключить на 2-й отзыв"></label>
-            <label for="slider-3" class="reviews__toggle" title="Переключить на 3-й отзыв"></label>
+            <label for="slide-1" class="reviews__toggle" title="Переключить на 1-й отзыв"></label>
+            <label for="slide-2" class="reviews__toggle" title="Переключить на 2-й отзыв"></label>
+            <label for="slide-3" class="reviews__toggle" title="Переключить на 3-й отзыв"></label>
 
             <input class="reviews__range" type="range" id="reviews-range" name="reviews-range" aria-label="Слайдер переключения отзывов" min="1" aria-valuemin="1" max="3" aria-valuemax="3" step="1" value="1" aria-valuenow="1">
           </div>
@@ -291,21 +298,20 @@
         <div class="trial-session__wrapper">
           <h2 class="trial-session__heading heading--underline" id="trial-session__heading">Бесплатное<br>пробное занятие</h2>
           <p class="trial-session_text">Приходите на бесплатное первое занятие по теме “аэропорт” и ощутите пользу сразу!</p>
-          <a class="trial-session__sign-up button" href="appointment.html">Записаться на пробное занятие</a>
+          <a class="trial-session__sign-up button" href="appointment.html" data-modal>Записаться на пробное занятие</a>
         </div>
       </section>
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo" href="/">
-        <picture class="page-footer__picture">
-          <source media="(min-width: 1170px)" srcset="img/yes-desktop.jpg 1x, img/yes@2x-desktop.jpg 2x">
-          <img class="page-footer__image shortRes" src="img/yes-mobile.jpg" srcset="img/yes@2x-mobile.jpg 2x" alt="Логотип сайта 'Yes'">
-        </picture>
+      <a class="page-footer__logo" href="/yesSchool" aria-label="Логотип сайта 'Школа YES'">
+        <svg class="page-header__image" width="63" height="23" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
       </a>
 
       <p class="page-footer__location location">
-        <span class="location__school">Школа  Английского Языка</span>
+        <span class="location__school">Школа Английского Языка</span>
         <b class="location__address">г. Москва ул. Северная, 35</b>
       </p>
 
@@ -335,8 +341,8 @@
       </div>
 
       <p class="page-footer__contacts contacts">
-        <a class="contacts__tel" href="tel:+7495465467">+7 (945) 46-54-67</a>
-        <a class="contacts__call-request" href="appointment.html">Заказать звонок</a>
+        <a class="contacts__tel" href="tel:+7945465467">+7 (945) 46-54-67</a>
+        <a class="contacts__call-request" href="appointment.html" data-modal>Заказать звонок</a>
       </p>
     </footer>
 
@@ -349,7 +355,27 @@
         <input class="appointment__submit button" type="submit" value="Записаться на пробное занятие">
       </form>
 
-      <button class="appointment__close" type="button" title="Закрыть модальное окно" onclick="window.closeModal()"></button>
+      <button class="appointment__close" type="button" title="Закрыть модальное окно"></button>
+    </section>
+
+    <section class="to-main-page" id="to-main-page" aria-labelledby="to-main-page__heading">
+      <h2 class="visually-hidden" id="to-main-page__heading">На главную страницу</h2>
+
+      <a href="/" class="to-main-page__logo"  aria-label="Перейти на главную страницу">
+        <svg class="to-main-page__logo-image" viewBox="0 0 125 125" width="50px" height="50px" aria-hidden="true">
+          <g class="to-main-page__logo-group to-main-page__logo-group--border" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100.2 2.5L122 39.3l-59.8 81.4L2.9 39.3 24 2.5h76.2m1.5-2.5H22.6L0 39.5 62.2 125 125 39.5 101.7 0z"/>
+          </g>
+
+          <g class="to-main-page__logo-group to-main-page__logo-group--inner">
+            <path d="M59.6 90.5c.1-.3 1.1-3.7 2.3-7.7l2.1-7.2h.9c.5 0 .8.1.8.2s-1 3.5-2.2 7.7L61.2 91h-.9c-.6 0-.7-.1-.7-.5zm-7.9-3.1c-4.2-2.2-4.6-2.4-4.6-3.2s.4-1 4.9-3.3l4.9-2.5v.9c0 .8-.2 1-3.9 2.9l-3.9 2 3.8 2c3.5 1.8 3.8 2 3.8 2.8 0 .5-.1.8-.2.8-.2 0-2.3-1.1-4.8-2.4zM68.5 89c0-.8.3-1 3.9-2.8l4-2-4-2c-3.7-1.9-3.9-2-3.9-2.9v-.9l4.9 2.5c4.6 2.3 4.9 2.5 4.9 3.3s-.4 1-4.8 3.2c-2.6 1.3-4.8 2.4-4.9 2.4 0 0-.1-.3-.1-.8zm-23-23.3c-.9-.9-1-1.1-1-2.5 0-2.7 1.3-4.1 3.8-4.1 1 0 1.3.2 2.2 1.1 1 1 1.1 1.1.9 2.9-.1 1.7-.2 2-1.1 2.8-.8.7-1.1.9-2.4.9-1.3-.1-1.6-.3-2.4-1.1zm3.6-.6c.8-1.9 0-5.1-1.1-5.1-1.3 0-1.9 2.9-1 4.8.6 1.3 1.7 1.4 2.1.3zM64 66.3c-.2-.2-.4-1.3-.4-3.2 0-2.6 0-2.9-.6-2.9-.3 0-.6-.2-.6-.3 0-.2.3-.4.6-.5.4-.1.6-.4.6-.8 0-.6 1.1-1.6 1.6-1.6.1 0 .2.5.2 1.1 0 1.1.1 1.1.9 1.1.6 0 .9.2.9.5s-.3.5-.9.5h-1v2.3c0 2.4.2 2.8 1.2 2.8.9 0 .9.6 0 1-.8.4-2.2.4-2.5 0zm5.8 0c-1-.7-1.3-2-1.2-3.6.2-1.2.3-1.6 1.2-2.5.8-.8 1.2-1 2.2-1 1.4 0 2.6 1 2.6 2.3 0 1.1-.4 1.2-2.6 1.2-1.8 0-2 .1-1.2 1.4.5 1.1 1.6 1.3 2.7.9 1.1-.6 1.4.1.4 1-1.2.8-3.1 1-4.1.3zm2.9-4.7c.3-.5-.4-1.5-1-1.5s-1.1.8-1.1 1.4c0 .3 1.8.3 2.1.1zm14.4 4.6c-.9-.8-1.2-1.6-1.2-3 0-2.3 1.6-4 3.9-4 1 0 1.1 0 1.1-1.1 0-.9-.2-1.2-.6-1.5-.8-.5-.8-1.1 0-1.1.3 0 1-.1 1.4-.2l.9-.2v5.1c0 4.9 0 5.1.6 5.3 1 .3.5.9-.9 1.1-1 .2-1.3.2-1.4-.2-.2-.3-.3-.3-.6 0-.7.4-2.5.3-3.2-.2zm3.1-1c.5-.3.6-.7.6-2.4 0-2.3-.4-3-1.5-2.7-1.9.5-1.7 4.9.3 5.4 0 0 .3-.1.6-.3zm-58.7 1c0-.2.3-.4.6-.5.5-.2.6-.5.6-2.8 0-2.4 0-2.6-.6-2.6-.8 0-.8-.6 0-.8.4-.1.6-.5.8-1.3.3-1.6 1.7-3.2 3.2-3.2 1.2 0 1.8.6 1.3 1.4-.4.8-.7.8-1.1.2-1-1.1-1.7-.3-1.7 1.8 0 .9.1 1 1.1 1 1.3 0 1.1.7-.2.8l-1 .1.1 2.5c.1 2.3.2 2.6.8 2.8 1.1.5.7.8-1.5.8-1.4-.1-2.4-.1-2.4-.2zm5.7 0c0-.2.3-.4.6-.5.5-.2.6-.5.6-2.5 0-1.9-.1-2.4-.5-2.7-.7-.5-.3-.9 1.1-1.1 1-.2 1.1-.2 1.1.5v.7l.7-.7c1.1-1 2-.8 2 .4 0 .8-.1.9-1.1.9-1.4 0-1.7.5-1.6 2.7.1 1.3.2 1.7.8 1.9 1.1.5.7.8-1.5.8-1.1-.3-2.2-.3-2.2-.4zm15.7 0c0-.2.3-.4.6-.5.5-.2.6-.5.6-2.5 0-1.9-.1-2.4-.5-2.7-.7-.5-.3-.9 1.1-1.1.9-.2 1.1-.1 1.1.3 0 .5.1.5.8 0 .4-.3 1.1-.5 1.7-.5 1.5 0 1.9.8 1.9 3.6 0 2.1.1 2.4.6 2.8 1 .6.7.8-1.3.8-1.7 0-2.4-.3-1.4-.7.7-.2.6-4.3 0-4.9-.5-.6-.5-.6-1.4-.1-.7.3-.8.5-.8 2.4 0 1.5.1 2.2.5 2.5.8.7.5.9-1.4.9-1.3-.2-2.1-.2-2.1-.3zm23.1 0c0-.2.3-.4.6-.5.5-.2.6-.5.6-2.5 0-1.9-.1-2.4-.5-2.7-.7-.5-.3-.9 1.1-1.1.9-.2 1.1-.1 1.1.3 0 .5.1.5.8 0 .4-.3 1.1-.5 1.7-.5 1.5 0 1.9.8 1.9 3.6 0 2.1.1 2.4.6 2.8 1 .6.7.8-1.3.8-1.7 0-2.4-.3-1.4-.7.7-.2.6-4.3 0-4.9-.5-.6-.5-.6-1.4-.1-.7.3-.8.5-.8 2.4 0 1.5.1 2.2.5 2.5.8.7.5.9-1.4.9-1.2-.2-2.1-.2-2.1-.3zm-23.8-16c-1-.3-1.9-.8-2.1-1-.4-.5-1.3-6.3-1.1-7 .1-.3.5-.5.9-.5.6 0 .8.3 1.1 1.4.8 2.1 2.2 4.1 3.7 4.9 1.1.6 1.6.7 3.3.6 2.2-.1 3.1-.6 4.2-2.3.8-1.1.9-3.8.2-5.2-.7-1.3-2.8-3-5.9-4.7-5-2.7-6.6-4.8-6.6-8.5 0-3.4 1.3-5.6 4.4-7.2 1.6-.9 6.1-1.1 8.7-.4l1.8.5.4 3.3c.2 1.7.3 3.3.3 3.3-.1 0-.5.2-.9.3-.8.2-.8.1-1.2-1.5-.7-2.2-2.4-3.9-4-4.2-3.3-.6-5.9 1.6-5.9 4.7 0 2.7 1.6 4.4 6.1 6.8 5.6 2.9 7.2 4.8 7.2 8.6 0 3.6-1.4 5.9-4.6 7.6-1.7.9-2.2 1-5 1.1-2.6-.1-3.7-.2-5-.6zm19.8-.6c.1-.9.2-1 1.1-1.1 1.6-.1 2.6-.7 2.9-1.4.1-.4.2-5.8.2-12V23.8l-.8-.7c-.5-.4-1.1-.7-1.6-.7-1.2 0-1.7-.3-1.7-1.1v-.8H84v.8c0 .5-.2.8-.8.9-1.7.4-2 .5-2.4.7-.6.4-.9 2.8-.9 7.1v3.4h16l-.2-4.8c-.1-2.6-.3-5-.5-5.4s-.8-.7-1.4-.8c-1.9-.3-2.1-.5-2.1-1.1v-.7h11.9v.7c0 .8-.5 1.1-1.7 1.1-.5 0-1.1.3-1.6.7l-.8.7V47l.7.7c.5.4 1.1.7 2 .8 1.3.2 1.3.2 1.4 1.1l.1 1H91.1v-.9c0-1 .4-1.1 1.9-1.1.6 0 1.2-.3 1.7-.7l.8-.7.2-5.6.2-5.6H79.7l.2 5.6c.2 6.5.3 6.8 2.8 7.1 1.3.2 1.3.2 1.4 1.1l.1 1H71.9c0-.3.1-1.2.1-1.2zm-50.5-.2c.1-.8.2-.9 1.4-1 .9-.1 1.6-.4 2-.8.7-.7.7-.7.7-11.9 0-6.1-.1-11.5-.2-12-.2-.8-1.1-1.2-2.9-1.5-1-.2-1.1-.3-1.1-.9v-.8h12.2v.8c0 .6-.2.8-1.1.9-2.1.4-2.6.6-2.9 1.6-.4 1.1-.5 21.3-.1 22.5.1.4.5 1 .9 1.2 1.5 1.1 7 1.1 8.7-.2.8-.5 2.4-3 2.9-4.5.2-.5 1.7-.2 1.7.5 0 .2-.4 1.8-.8 3.6l-.8 3.2H21.4c0 .2.1-.7.1-.7z"/>
+          </g>
+        </svg>
+      </a>
+
+      <script>
+        !function(){"use strict";let e=!!window.MSInputMethodContext&&!!document.documentMode,t=/Edge/.test(window.navigator.userAgent);(e||t)&&document.documentElement.classList.add("MSBrowser");let n,i=window.innerWidth>=1170;function o(){let e=document.getElementById("to-main-page"),t=e.querySelector(".to-main-page__logo");n=!1,t.addEventListener("click",function(t){n||(t.preventDefault(),e.style.left=0,n=!0,setTimeout(function(){e.removeAttribute("style"),n=!1},3e3))},!1)}i||o(),window.addEventListener("resize",function(){!i&&window.innerWidth>=1170?(i=!0,n=!0):i&&window.innerWidth<1170&&(n=!1,i=!1,o())},!1)}();
+      </script>
     </section>
 
     <script src="js/main.js"></script>

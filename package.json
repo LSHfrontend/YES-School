@@ -37,7 +37,8 @@
     "stylelint": "stylelint 'source/less/**/*.less' --syntax less",
     "test": "yarn run editorconfig && yarn run stylelint",
     "start": "gulp build && gulp server",
-    "image": "gulp images"
+    "image": "gulp images",
+    "css": "gulp css"
   },
   "browserslist": [
     "last 2 versions",

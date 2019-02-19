@@ -1,6 +1,6 @@
 .reviews {
   width: 290px;
-  margin: 0 auto 63px;
+  margin: 0 auto 51px;
   padding-bottom: 31px;
 
   text-align: center;
@@ -18,8 +18,8 @@
 }
 
 .reviews__item {
+  min-height: 518px;
   margin: 0;
-  margin-bottom: 30px;
 
   color: @dark;
 }
@@ -49,10 +49,6 @@
   margin-bottom: 9px;
 
   line-height: 1.8rem;
-
-  & br:last-child {
-    display: none;
-  }
 }
 
 .reviews__link {
@@ -110,12 +106,13 @@
     position: absolute;
     top: 0;
     right: 500%;
+
     opacity: 0;
   }
 
-  .reviews__radio[id="slider-1"]:checked ~ .reviews__item:first-of-type,
-  .reviews__radio[id="slider-2"]:checked ~ .reviews__item:nth-of-type(2),
-  .reviews__radio[id="slider-3"]:checked ~ .reviews__item:nth-of-type(3) {
+  .reviews__radio[id="slide-1"]:checked ~ .reviews__item:first-of-type,
+  .reviews__radio[id="slide-2"]:checked ~ .reviews__item:nth-of-type(2),
+  .reviews__radio[id="slide-3"]:checked ~ .reviews__item:nth-of-type(3) {
     position: relative;
     right: 0;
 
@@ -128,9 +125,9 @@
     }
   }
 
-  .reviews__radio[id="slider-1"]:checked ~ .reviews__control .reviews__toggle[for="slider-1"],
-  .reviews__radio[id="slider-2"]:checked ~ .reviews__control .reviews__toggle[for="slider-2"],
-  .reviews__radio[id="slider-3"]:checked ~ .reviews__control .reviews__toggle[for="slider-3"] {
+  .reviews__radio[id="slide-1"]:checked ~ .reviews__control .reviews__toggle[for="slide-1"],
+  .reviews__radio[id="slide-2"]:checked ~ .reviews__control .reviews__toggle[for="slide-2"],
+  .reviews__radio[id="slide-3"]:checked ~ .reviews__control .reviews__toggle[for="slide-3"] {
     background-color: @red;
     box-shadow: 0 4px 10px 0 rgba(245, 17, 44, 0.58);
   }
@@ -139,7 +136,7 @@
 @media (min-width: @tablet-width) {
   .reviews {
     width: 720px;
-    margin-bottom: 108px;
+    margin-bottom: 78px;
 
     text-align: left;
   }
@@ -159,7 +156,7 @@
   .reviews__item {
     display: none;
 
-    margin-bottom: 60px;
+    min-height: 358px;
     padding-left: 188px;
 
     &--active {
@@ -297,7 +294,7 @@
 @media (min-width: @desktop-width) {
   .reviews {
     width: 1140px;
-    margin: -185px auto 146px;
+    margin: -185px auto 116px;
   }
 
   .reviews__heading {
@@ -311,7 +308,7 @@
   }
 
   .reviews__item {
-    margin-bottom: 80px;
+    min-height: 367px;
     padding-right: 145px;
     padding-left: 232px;
   }

@@ -47,9 +47,13 @@
 
 .stages__item {
   margin: 0;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
 
   color: @dark;
+
+  &:nth-child(3) .stages__text {
+    width: 270px;
+  }
 }
 
 .stages__title {
@@ -72,7 +76,7 @@
     width: 13px;
     height: 9px;
 
-    background-image: url("../img/arrow.svg");
+    background-image: url("../img/sprite.svg#icon-arrow-view");
     background-position: 0 0;
     background-repeat: no-repeat;
   }

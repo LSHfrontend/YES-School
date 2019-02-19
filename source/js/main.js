@@ -1,24 +1,27 @@
 "use strict";
 
 (function () {
-  let isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+  let list = document.getElementsByClassName("reviews__list")[0];
 
-  if (isIE11) {
-    (function (arr) {
-      for (let i = 0; i < arr.length; i++) {
-        let script = document.createElement("script");
-        script.src = arr[i];
-        document.body.appendChild(script);
-      };
-    })(["js/imagePolyfill.js", "js/svgxuse.js"]);
+  if (isEdge && window.innerWidth < 760) {
+    let firstSlide = list.querySelector(".reviews__item");
+    let sliderLink = firstSlide.querySelector(".reviews__link");
+
+    firstSlide.style.cssText = "position: relative; right: 0; opacity: 1;";
+    sliderLink.style.display = "inline";
+
+    list.onchange = function() {
+      firstSlide.removeAttribute("style");
+      sliderLink.removeAttribute("style");
+      list.onchange = null;
+    };
   };
 
-  if (window.outerWidth >= 760) {
-    let list = document.getElementsByClassName("reviews__list")[0];
+  if (window.innerWidth >= 760) {
     let range = document.getElementById("reviews-range");
-    let listener = isIE11 ? "change" : "input";
+    let listener = isIE11 || isEdge ? "change" : "input";
 
-    function slider () {
+    function slider() {
       this.setAttribute("aria-valuenow", this.value);
 
       list.getElementsByClassName("reviews__item--active")[0].classList.remove("reviews__item--active");
@@ -28,38 +31,46 @@
     range.addEventListener(listener, slider, false);
   };
 
-  let modal = document.getElementsByClassName("appointment")[0];
+  function createShading() {
+    let div = document.createElement("div");
+    div.classList.add("shading");
+    document.body.appendChild(div);
+    div.addEventListener("click", closeModal, false);
 
-  function modalWindow(evt) {
-    if (evt.target.getAttribute("href") !== "appointment.html") return;
-    evt.preventDefault();
+    document.body.onkeydown = function (evt) {
+      if (evt.keyCode !== 27) return;
 
-    window.showModal();
-  };
-
-  window.showModal = function () {
-    modal.style.display = "block";
-    modal.getElementsByClassName("appointment__tel")[0].focus();
-
-    if (window.outerWidth >= 760) {
-      (function() {
-        let div = document.createElement("div");
-        div.classList.add("shading");
-        div.setAttribute("onclick", "window.closeModal()")
-        document.body.appendChild(div);
-      })();
+      closeModal();
+      document.body.onkeydown = null;
     };
   };
 
-  window.closeModal = function () {
-    modal.style.display = "none";
+  function removeShading() {
     document.body.removeChild(document.getElementsByClassName("shading")[0]);
   };
 
-  document.body.addEventListener("click", modalWindow, false);
-  document.body.addEventListener("keydown", function (evt) {
-    let shading = document.getElementsByClassName("shading")[0];
-    if (shading && evt.keyCode === 27) window.closeModal();
-  }, false);
-})();
+  let modal = document.getElementsByClassName("appointment")[0];
+  let modalBtn = document.querySelectorAll("*[data-modal]");
+  for (let i = 0; i < modalBtn.length; i++) {
+    modalBtn[i].addEventListener("click", showModal, false);
+  };
 
+  function showModal(evt) {
+    evt.preventDefault();
+    modal.style.display = "block";
+    modal.querySelector(".appointment__form")[0].focus();
+    modal.querySelector(".appointment__close").addEventListener("click", closeModal, false);
+
+    if (window.innerWidth >= 760) {
+      createShading();
+    }
+  };
+
+  function closeModal() {
+    modal.style.display = "none";
+
+    if (window.innerWidth >= 760) {
+      removeShading();
+    }
+  };
+})();
